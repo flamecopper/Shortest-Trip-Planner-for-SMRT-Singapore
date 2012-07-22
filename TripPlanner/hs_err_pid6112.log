@@ -1,0 +1,200 @@
+#
+# An unexpected error has been detected by Java Runtime Environment:
+#
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x07830338, pid=6112, tid=3820
+#
+# Java VM: Java HotSpot(TM) Client VM (1.6.0-b105 mixed mode)
+# Problematic frame:
+# C  0x07830338
+#
+# If you would like to submit a bug report, please visit:
+#   http://java.sun.com/webapps/bugreport/crash.jsp
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x02211c00):  JavaThread "Worker-31" [_thread_in_native, id=3820]
+
+siginfo: ExceptionCode=0xc0000005, reading address 0x84000003
+
+Registers:
+EAX=0x84000003, EBX=0x07a168a8, ECX=0x07a08780, EDX=0x00000002
+ESP=0x06e2f140, EBP=0x800014dc, ESI=0x07a29738, EDI=0x09b01484
+EIP=0x07830338, EFLAGS=0x00010216
+
+Top of Stack: (sp=0x06e2f140)
+0x06e2f140:   06e2f1a0 6804acf5 07a08780 07870002
+0x06e2f150:   09b01484 000014dc 0946a7d0 07a08360
+0x06e2f160:   06e2f1a0 6804b2c2 06e2f148 0946a7d0
+0x06e2f170:   0946a7d0 094d96e0 80000000 09ed8a94
+0x06e2f180:   6805d714 09ed8a94 6804b45c 06e2f1a8
+0x06e2f190:   06e2f1a0 0946a7d0 09b01484 094d96e0
+0x06e2f1a0:   09b01484 09b014dc 00000001 08436778
+0x06e2f1b0:   6804aaa6 09b01484 800014dc 085d5b20 
+
+Instructions: (pc=0x07830338)
+0x07830328:   00 0f ca 5f 75 02 75 41 66 87 d1 87 f1 8b 47 04
+0x07830338:   8b 10 8b 41 04 8b 00 56 e9 b0 11 7d 60 8b 49 34 
+
+
+Stack: [0x06d30000,0x06e30000),  sp=0x06e2f140,  free space=1020k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  0x07830338
+
+[error occurred during error reporting, step 120, id 0xc0000005]
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  amzi.ls.LogicServer.ExecStr(Ljava/lang/String;)J+0
+j  com.amzi.prolog.ui.build.PrologBuilder.compileProject(ILjava/lang/String;Lorg/eclipse/core/resources/IProject;Ljava/lang/String;Ljava/lang/String;Lorg/eclipse/core/runtime/IProgressMonitor;)Ljava/util/List;+761
+j  com.amzi.prolog.ui.build.PrologBuilder.build(ILjava/util/Map;Lorg/eclipse/core/runtime/IProgressMonitor;)[Lorg/eclipse/core/resources/IProject;+341
+j  org.eclipse.core.internal.events.BuildManager$2.run()V+33
+J  org.eclipse.core.runtime.SafeRunner.run(Lorg/eclipse/core/runtime/ISafeRunnable;)V
+j  org.eclipse.core.internal.events.BuildManager.basicBuild(ILorg/eclipse/core/resources/IncrementalProjectBuilder;Ljava/util/Map;Lorg/eclipse/core/runtime/MultiStatus;Lorg/eclipse/core/runtime/IProgressMonitor;)V+301
+j  org.eclipse.core.internal.events.BuildManager.basicBuild(Lorg/eclipse/core/resources/IProject;I[Lorg/eclipse/core/resources/ICommand;Lorg/eclipse/core/runtime/MultiStatus;Lorg/eclipse/core/runtime/IProgressMonitor;)V+62
+j  org.eclipse.core.internal.events.BuildManager$1.run()V+24
+J  org.eclipse.core.runtime.SafeRunner.run(Lorg/eclipse/core/runtime/ISafeRunnable;)V
+j  org.eclipse.core.internal.events.BuildManager.basicBuild(Lorg/eclipse/core/resources/IProject;ILorg/eclipse/core/runtime/MultiStatus;Lorg/eclipse/core/runtime/IProgressMonitor;)V+98
+j  org.eclipse.core.internal.events.BuildManager.basicBuildLoop([Lorg/eclipse/core/resources/IProject;[Lorg/eclipse/core/resources/IProject;ILorg/eclipse/core/runtime/MultiStatus;Lorg/eclipse/core/runtime/IProgressMonitor;)V+97
+j  org.eclipse.core.internal.events.BuildManager.build(ILorg/eclipse/core/runtime/IProgressMonitor;)Lorg/eclipse/core/runtime/IStatus;+148
+j  org.eclipse.core.internal.events.AutoBuildJob.doBuild(Lorg/eclipse/core/runtime/IProgressMonitor;)V+88
+j  org.eclipse.core.internal.events.AutoBuildJob.run(Lorg/eclipse/core/runtime/IProgressMonitor;)Lorg/eclipse/core/runtime/IStatus;+48
+j  org.eclipse.core.internal.jobs.Worker.run()V+31
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x02211400 JavaThread "Listener" [_thread_blocked, id=3728]
+  0x02212000 JavaThread "Worker-35" [_thread_blocked, id=2756]
+  0x02210c00 JavaThread "Worker-34" [_thread_blocked, id=4068]
+  0x02212800 JavaThread "Worker-33" [_thread_blocked, id=5588]
+=>0x02211c00 JavaThread "Worker-31" [_thread_in_native, id=3820]
+  0x056f7000 JavaThread "Start Level Event Dispatcher" daemon [_thread_blocked, id=6004]
+  0x05690c00 JavaThread "Framework Event Dispatcher" daemon [_thread_blocked, id=5248]
+  0x05690400 JavaThread "State Data Manager" daemon [_thread_blocked, id=5816]
+  0x021fa800 JavaThread "Low Memory Detector" daemon [_thread_blocked, id=5888]
+  0x021f3c00 JavaThread "CompilerThread0" daemon [_thread_blocked, id=4372]
+  0x021f3400 JavaThread "Attach Listener" daemon [_thread_blocked, id=5388]
+  0x021f3000 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=4240]
+  0x021e4800 JavaThread "Finalizer" daemon [_thread_blocked, id=4848]
+  0x021d8800 JavaThread "Reference Handler" daemon [_thread_blocked, id=5408]
+  0x02161400 JavaThread "main" [_thread_in_native, id=4168]
+
+Other Threads:
+  0x021d5800 VMThread [id=4728]
+  0x021fb400 WatcherThread [id=1884]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap
+ def new generation   total 2880K, used 53K [0x10020000, 0x10340000, 0x113d0000)
+  eden space 2560K,   2% used [0x10020000, 0x1002d7e0, 0x102a0000)
+  from space 320K,   0% used [0x102f0000, 0x102f0000, 0x10340000)
+  to   space 320K,   0% used [0x102a0000, 0x102a0000, 0x102f0000)
+ tenured generation   total 37824K, used 6708K [0x113d0000, 0x138c0000, 0x20020000)
+   the space 37824K,  17% used [0x113d0000, 0x11a5d248, 0x11a5d400, 0x138c0000)
+ compacting perm gen  total 27392K, used 27369K [0x20020000, 0x21ae0000, 0x24020000)
+   the space 27392K,  99% used [0x20020000, 0x21ada6b0, 0x21ada800, 0x21ae0000)
+No shared spaces configured.
+
+Dynamic libraries:
+0x00400000 - 0x0040e000 	C:\Program Files\amzi\eclipse_3-3-1\eclipse.exe
+0x772c0000 - 0x773e8000 	C:\Windows\system32\ntdll.dll
+0x76ce0000 - 0x76dbc000 	C:\Windows\system32\kernel32.dll
+0x77220000 - 0x772bd000 	C:\Windows\system32\USER32.dll
+0x769c0000 - 0x76a0b000 	C:\Windows\system32\GDI32.dll
+0x76ae0000 - 0x76ba6000 	C:\Windows\system32\ADVAPI32.dll
+0x77150000 - 0x77213000 	C:\Windows\system32\RPCRT4.dll
+0x74160000 - 0x741e5000 	C:\Windows\WinSxS\x86_microsoft.windows.common-controls_6595b64144ccf1df_5.82.6002.18305_none_88f3a38569c2c436\COMCTL32.dll
+0x75b70000 - 0x75c1a000 	C:\Windows\system32\MSVCRT.dll
+0x77400000 - 0x7741e000 	C:\Windows\system32\IMM32.DLL
+0x76a10000 - 0x76ad8000 	C:\Windows\system32\MSCTF.dll
+0x77430000 - 0x77439000 	C:\Windows\system32\LPK.DLL
+0x774a0000 - 0x7751d000 	C:\Windows\system32\USP10.dll
+0x72000000 - 0x72012000 	C:\Program Files\amzi\eclipse_3-3-1\plugins\org.eclipse.equinox.launcher.win32.win32.x86_1.0.1.R33x_v20070828\eclipse_1020.dll
+0x74e40000 - 0x74e48000 	C:\Windows\system32\VERSION.dll
+0x10000000 - 0x1001b000 	C:\Program Files\Aculearn\AcuCONFERENCE6\MsnHookDll.dll
+0x75dd0000 - 0x768e1000 	C:\Windows\system32\SHELL32.dll
+0x75d70000 - 0x75dc9000 	C:\Windows\system32\SHLWAPI.dll
+0x75c20000 - 0x75d65000 	C:\Windows\system32\ole32.dll
+0x76ea0000 - 0x76f2d000 	C:\Windows\system32\OLEAUT32.dll
+0x73570000 - 0x735a2000 	C:\Windows\system32\WINMM.dll
+0x742e0000 - 0x7431d000 	C:\Windows\system32\OLEACC.dll
+0x74ab0000 - 0x74c4e000 	C:\Windows\WinSxS\x86_microsoft.windows.common-controls_6595b64144ccf1df_6.0.6002.18305_none_5cb72f2a088b0ed3\comctl32.dll
+0x770c0000 - 0x77144000 	C:\Windows\system32\CLBCatQ.DLL
+0x6d870000 - 0x6dab7000 	C:\Program Files\amzi\eclipse_3-3-1\jre\bin\client\jvm.dll
+0x7c340000 - 0x7c396000 	C:\Windows\system32\MSVCR71.dll
+0x75950000 - 0x7597c000 	C:\Windows\system32\apphelp.dll
+0x6d3c0000 - 0x6d3c8000 	C:\Program Files\amzi\eclipse_3-3-1\jre\bin\hpi.dll
+0x75b10000 - 0x75b17000 	C:\Windows\system32\PSAPI.DLL
+0x6d820000 - 0x6d82c000 	C:\Program Files\amzi\eclipse_3-3-1\jre\bin\verify.dll
+0x6d460000 - 0x6d47f000 	C:\Program Files\amzi\eclipse_3-3-1\jre\bin\java.dll
+0x6d860000 - 0x6d86f000 	C:\Program Files\amzi\eclipse_3-3-1\jre\bin\zip.dll
+0x6d620000 - 0x6d633000 	C:\Program Files\amzi\eclipse_3-3-1\jre\bin\net.dll
+0x77440000 - 0x7746d000 	C:\Windows\system32\WS2_32.dll
+0x77420000 - 0x77426000 	C:\Windows\system32\NSI.dll
+0x75170000 - 0x751ab000 	C:\Windows\system32\mswsock.dll
+0x751d0000 - 0x751d5000 	C:\Windows\System32\wship6.dll
+0x6d640000 - 0x6d649000 	C:\Program Files\amzi\eclipse_3-3-1\jre\bin\nio.dll
+0x02250000 - 0x0229f000 	C:\Users\Alvin Oo\.eclipse\com.amzi.prolog.ide_3.2.5_1933052534\configuration\org.eclipse.osgi\bundles\71\1\.cp\swt-win32-3346.dll
+0x76940000 - 0x769b3000 	C:\Windows\system32\comdlg32.dll
+0x76dc0000 - 0x76e91000 	C:\Windows\system32\WININET.dll
+0x773f0000 - 0x773f3000 	C:\Windows\system32\Normaliz.dll
+0x75b20000 - 0x75b65000 	C:\Windows\system32\iertutil.dll
+0x736c0000 - 0x736ff000 	C:\Windows\system32\uxtheme.dll
+0x02130000 - 0x02138000 	C:\Users\Alvin Oo\.eclipse\com.amzi.prolog.ide_3.2.5_1933052534\configuration\org.eclipse.osgi\bundles\27\1\.cp\os\win32\x86\localfile_1_0_0.dll
+0x06ff0000 - 0x07004000 	C:\Users\Alvin Oo\.eclipse\com.amzi.prolog.ide_3.2.5_1933052534\configuration\org.eclipse.osgi\bundles\71\1\.cp\swt-gdip-win32-3346.dll
+0x73730000 - 0x738db000 	C:\Windows\WinSxS\x86_microsoft.windows.gdiplus_6595b64144ccf1df_1.0.6002.18342_none_9e54f8aaca13c773\gdiplus.dll
+0x74ef0000 - 0x74f2b000 	C:\Windows\system32\rsaenh.dll
+0x071a0000 - 0x07219000 	C:\Program Files\amzi\amzi_7-6-9\bin\amzijni.dll
+0x68000000 - 0x68260000 	C:\Program Files\amzi\amzi_7-6-9\bin\AMZI.dll
+0x753c0000 - 0x753d9000 	C:\Windows\system32\iphlpapi.dll
+0x75380000 - 0x753b5000 	C:\Windows\system32\dhcpcsvc.DLL
+0x75680000 - 0x756ac000 	C:\Windows\system32\DNSAPI.dll
+0x759b0000 - 0x759c4000 	C:\Windows\system32\Secur32.dll
+0x758f0000 - 0x758f7000 	C:\Windows\system32\WINNSI.DLL
+0x75350000 - 0x75372000 	C:\Windows\system32\dhcpcsvc6.DLL
+0x745a0000 - 0x745af000 	C:\Windows\system32\inetmib1.dll
+0x72c60000 - 0x72c69000 	C:\Windows\system32\snmpapi.dll
+0x759d0000 - 0x759ee000 	C:\Windows\system32\USERENV.dll
+0x07880000 - 0x078b4000 	C:\Program Files\amzi\amzi_7-6-9\bin\aosutils.lsx
+0x72c90000 - 0x72cd2000 	C:\Windows\system32\WINSPOOL.DRV
+0x73c60000 - 0x73c90000 	C:\Windows\system32\mlang.dll
+0x741f0000 - 0x741f5000 	C:\Windows\system32\msimg32.dll
+0x748d0000 - 0x748df000 	C:\Windows\system32\NLAapi.dll
+0x71dd0000 - 0x71ddf000 	C:\Windows\system32\napinsp.dll
+0x71d90000 - 0x71da2000 	C:\Windows\system32\pnrpnsp.dll
+0x71dc0000 - 0x71dc8000 	C:\Windows\System32\winrnr.dll
+0x768f0000 - 0x76939000 	C:\Windows\system32\WLDAP32.dll
+0x05e30000 - 0x05e49000 	C:\Program Files\Bonjour\mdnsNSP.dll
+0x71db0000 - 0x71dbc000 	C:\Windows\system32\wshbth.dll
+0x76f30000 - 0x770ba000 	C:\Windows\system32\SETUPAPI.dll
+0x74d70000 - 0x74d75000 	C:\Windows\System32\wshtcpip.dll
+0x72d00000 - 0x72d06000 	C:\Windows\system32\rasadhlp.dll
+
+VM Arguments:
+jvm_args: -Xms40m -Xmx256m
+java_command: <unknown>
+Launcher Type: generic
+
+Environment Variables:
+CLASSPATH=C:\Program Files\Java\jdk1.6.0_22\lib
+PATH=C:\Program Files\amzi\eclipse_3-3-1\jre\bin\client;C:\Program Files\amzi\eclipse_3-3-1\jre\bin;C:\Program Files\amzi\amzi_7-6-9\bin;C:\Program Files\Common Files\Microsoft Shared\Windows Live;C:\Program Files\Java\jre6\bin;C:\Program Files\Windows Live\Shared;C:\Program Files\Autodesk\Backburner\;C:\Program Files\Common Files\Autodesk Shared\;C:\cygwin\bin;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Borland\bcc55\Bin;C:\Borland\bcc55\Include;C:\Borland\bcc55\Lib;C:\Program Files\QuickTime\QTSystem\;C:\Program Files\Microsoft ASP.NET\ASP.NET Web Pages\v1.0\;C:\Program Files\MySQL\MySQL Server 5.1\bin;C:\Program Files\doxygen\bin;C:\Program Files\TortoiseSVN\bin;C:\Program Files\Java\jdk1.6.0_22\bin;C:\cygwin\bin
+USERNAME=Alvin Oo
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=x86 Family 6 Model 23 Stepping 6, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows Vista Build 6002 Service Pack 2
+
+CPU:total 2 family 6, cmov, cx8, fxsr, mmx, sse, sse2
+
+Memory: 4k page, physical 2097151k(1481232k free), swap 4194303k(4194303k free)
+
+vm_info: Java HotSpot(TM) Client VM (1.6.0-b105) for windows-x86, built on Nov 29 2006 00:48:48 by "java_re" with unknown MS VC++:1310
+
